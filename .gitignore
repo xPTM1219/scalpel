@@ -14,3 +14,9 @@
 *.a
 
 src/libscalpel_test
+
+# Images
+pendrive.img
+device.img
+recovery
+
