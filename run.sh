@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 
-
-# set -x
 ERRORS=()
-
 PWD=$(pwd)
 
 if [[ ! -f ${PWD}/device.img ]]; then
   ERRORS+=("No ${PWD}/device.img file available!")
+elif [[ ! -d ${PWD}/recovery ]]; then
+  ERRORS+=("No ${PWD}/recovery directory available!")
 fi
-
-# if [[ ! -d ${PWD}/recovery ]]; then
-#   ERRORS+=("No ${PWD}/recovery directory available!")
-# fi
 
 function print_errors() {
   # echo Num of array items "${#ERRORS[@]}"

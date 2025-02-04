@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-
-# set -x
 ERRORS=()
-
 PWD=/scalpel
 
 if [[ ! -f ${PWD}/device.img ]]; then
   ERRORS+=("No ${PWD}/device.img file available!")
-fi
-
-if [[ ! -d ${PWD}/recovery ]]; then
+elif [[ ! -d ${PWD}/recovery ]]; then
   ERRORS+=("No ${PWD}/recovery directory available!")
 fi
 

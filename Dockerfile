@@ -1,7 +1,5 @@
 FROM ubuntu:22.04
 
-# ADD https://github.com/sleuthkit/scalpel/archive/master.zip /
-
 RUN apt update && \
   apt install -y -qq --no-install-recommends \
       automake \
@@ -21,3 +19,4 @@ COPY . /scalpel
 WORKDIR /scalpel
 RUN ./bootstrap && ./configure --disable-shared && make
 ENTRYPOINT ["/scalpel/entrypoint.sh"]
+
