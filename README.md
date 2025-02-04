@@ -1,4 +1,4 @@
-********************************************************************
+# README
 
 As of 6/27/2013 Scalpel has been released under the Apache 2.0 License
 and the source is available at The Sleuth Kit github repository.
@@ -10,7 +10,23 @@ into several memory leaks and the effort was abandoned.
 No official releases are being made. You can submit pull requests, 
 but they may take a while to get reviewed. 
 
-********************************************************************
+## Fork update
+
+Since the main repo is not being maintained and there are a couple of pull
+requests, I decided to fork the main repo and start to include some of the
+pull requests in here. If anyone wants to add pull requests, I'll be ready
+to review, test and merge them.
+
+I'll be updating the repo as well as I keep finding fixes.
+
+I haven't found a straight foward way to compile the program in Linux as of
+Feb/4/2025. I have to read the code and keep adding the exact way to do it
+to the README. Any help is welcome.
+
+Of course, I've this is not my initial work, thus I've included the Apache 2
+license as stated by sleuthkit main repo.
+
+## Information
 
 Scalpel is a file carving and indexing application that runs on Linux
 and Windows.  The first version of Scalpel, released in 2005, was
@@ -73,27 +89,59 @@ that our compilation environment for Windows is currently 32-bit; we
 haven't tested on the 64-bit version of mingw, but will address this
 int the future.
 
-COMPILE INSTRUCTIONS ON SUPPORTED PLATFORMS:
+## Requirements for Linux
 
-Linux/Mac OS X:    
-% ./bootstrap
-% ./configure 
-% make
+- libtool
+- automake
+- autoconf
+- make
+- tre-agrep
+- libtre5
+- libtre-dev
 
-Windows (mingw):
+### Install dependencies
+
+> I added gcc and g++ just in case
+
+```bash
+sudo apt install automake autoconf libtool make tre-agrep libtre5 libtre-dev gcc g++ -y
+```
+
+## Compiling
+
+```bash
+# Linux/Mac OS X:
+./bootstrap
+./configure 
+make
+```
+
+```bash
+# Windows (mingw):
 cd src 
 mingw32-make -f Makefile.win
+```
 
+## Installing
 
-and enjoy.  If you want to install the binary and man page in a more
+If you want to install the binary and man page in a more
 permanent place, just copy "scalpel" (or "scalpel.exe") and
 "scalpel.1" to appropriate locations, e.g., on Linux, "/usr/local/bin"
 and "/usr/local/man/man1", respectively.  On Windows, you'll also need
 to copy the pthreads and tre regular expression library dlls into the
 same directory as "scalpel.exe".
 
+## Running
 
-OTHER SUPPORTED PLATFORMS
+To run Scalpel, the file `scalpel.conf` must be specified in the current
+working directory.
+
+```bash
+# Folder has to exists
+scalpel -c scalpel.conf -o outDirName img-file
+```
+
+## OTHER SUPPORTED PLATFORMS
 
 We are not currently supporting Scalpel on Unix variants other than
 Linux. Go ahead and try a ./configure and make and see what happens,
@@ -104,10 +152,10 @@ supporting a GPU-enhanced version of Scalpel on Windows, we are also
 interesting in hearing from you.
 
 
-LIMITATIONS:
+## LIMITATIONS
 
-Carving Windows physical and logical device files (e.g.,
-\\.\physicaldrive0 or \\.\c:) isn't currently supported because it
+Carving Windows physical and logical device files `(e.g.,
+\\.\physicaldrive0 or \\.\c:)` isn't currently supported because it
 requires us to rewrite some portions of Scalpel to use Windows file
 I/O functions rather than standard Unix calls.  This may be supported
 in a future release.
@@ -119,7 +167,7 @@ The -s command line option ("skip") has been removed and will be
 replaced with a more robust facility in the next major release.
 
 
-DEPENDENCIES:
+## DEPENDENCIES
 
 Scalpel uses the POSIX threads library.  On Win32, Scalpel is
 distributed with the Pthreads-win32 - POSIX Threads Library for Win32,
@@ -132,10 +180,4 @@ distributed with tre-0.7.5, which is licensed under the LGPL.
 Cheers,
 
 --Golden and Vico.
-
-
-
-
-
-
 
