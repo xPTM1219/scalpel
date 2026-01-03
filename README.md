@@ -12,6 +12,10 @@ I'll be updating the repo as well as I keep finding fixes.
 Of course, this is not my initial work, thus I've included the Apache 2
 license as stated by sleuthkit main repo.
 
+It seems that one of the original developers of Scalpel has updated the
+code here [Scalpel 2.02](https://github.com/nolaforensix/scalpel-2.02).
+I'll add the updates eventually.
+
 ### Deprecation of original repo notice
 
 As of 6/27/2013 Scalpel has been released under the Apache 2.0 License
