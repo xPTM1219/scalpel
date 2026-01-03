@@ -667,7 +667,7 @@ int scalpel_carveSingleInput(ScalpelInputReader * const reader, const char * con
     const unsigned char handleEmbedded, const unsigned char organizeSubdirs,
     const unsigned char previewMode,
     const unsigned char carveWithMissingFooters,
-    const unsigned char noSearchOverlap) throw (std::runtime_error) {
+    const unsigned char noSearchOverlap) {
 
     if (!reader || ! confFilePath || ! outDir) {
         //invalid args

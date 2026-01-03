@@ -108,7 +108,7 @@ const char * scalpelInputGetId (ScalpelInputReader * const reader)
     return reader->id;
 }
 
-const char scalpelInputIsOpen (ScalpelInputReader * const reader) 
+char scalpelInputIsOpen (ScalpelInputReader * const reader) 
 {
     printVerbose("scalpelInputIsOpen()\n");
     return reader->isOpen;

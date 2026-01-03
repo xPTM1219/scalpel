@@ -112,7 +112,7 @@ sudo apt install automake autoconf libtool make tre-agrep libtre5 libtre-dev gcc
 ```bash
 # Linux/Mac OS X:
 ./bootstrap
-./configure 
+./configure --disable-shared
 make
 ```
 
