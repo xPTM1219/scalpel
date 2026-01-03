@@ -17,6 +17,12 @@ RUN apt update && \
 
 COPY . /scalpel
 WORKDIR /scalpel
-RUN ./bootstrap && ./configure --disable-shared && make
-ENTRYPOINT ["/scalpel/entrypoint.sh"]
 
+# Build and compile
+RUN ./bootstrap && ./configure --disable-shared && make
+
+# Give execution permission to entrypoint script
+RUN chmod 777 /scalpel/entrypoint.sh
+
+# Where/how to start the Docker image
+ENTRYPOINT ["/scalpel/entrypoint.sh"]

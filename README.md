@@ -149,14 +149,19 @@ In this section we'll cover how to build and run Scalpel with Docker
 
 To build the image, run the following:
 
-* docker build -t sleuthkit/scalpel .
+* Run `docker build -t sleuthkit/scalpel .`
+
+### Make a directory to have your images and files recovered
+
+* `mkdir -p image-recovery/disks_images`
+* `mkdir image-recovery/files_recovered`
 
 ### Run the container
 
 ```bash
 docker run --rm -it \
-  -v $(pwd)/device.img:/scalpel/device.img \
-  -v $(pwd)/recovery:/scalpel/recovery \
+  -v $(pwd)/image-recovery/device.img:/scalpel/device.img \
+  -v $(pwd)/files_recovered:/scalpel/recovery \
   sleuthkit/scalpel
 ```
 
