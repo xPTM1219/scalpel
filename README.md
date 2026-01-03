@@ -141,6 +141,39 @@ working directory.
 scalpel -c scalpel.conf -o outDirName img-file
 ```
 
+## Docker
+
+In this section we'll cover how to build and run Scalpel with Docker
+
+### Building the image
+
+To build the image, run the following:
+
+* Run `docker build -t sleuthkit/scalpel .`
+
+### Make a directory to have your images and files recovered
+
+* `mkdir -p image-recovery/disks_images`
+* `mkdir image-recovery/files_recovered`
+
+### Run the container
+
+```bash
+docker run --rm -it \
+  -v $(pwd)/image-recovery/device.img:/scalpel/device.img \
+  -v $(pwd)/files_recovered:/scalpel/recovery \
+  sleuthkit/scalpel
+```
+
+#### Volumes description
+
+There are two docker volumes that you need to mount to recover any files from
+the `device.img`.
+
+* `/scalpel/device.img` - this has to be the image file of the device you want
+  to recovery data from.
+* `/recovery` - this is the place where any recovered files will be written.
+
 ## OTHER SUPPORTED PLATFORMS
 
 We are not currently supporting Scalpel on Unix variants other than
