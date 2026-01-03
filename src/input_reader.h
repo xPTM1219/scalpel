@@ -79,7 +79,7 @@ int scalpelInputGetError (ScalpelInputReader * const reader);
 
 //non-abstract methods
 const char* scalpelInputGetId (ScalpelInputReader * const reader);
-const char scalpelInputIsOpen(ScalpelInputReader * const reader);
+char scalpelInputIsOpen(ScalpelInputReader * const reader);
 
 
 /********************* FILE implementation of ScalpelInputReader **********************/

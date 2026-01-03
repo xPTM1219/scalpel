@@ -14,6 +14,10 @@
 *.a
 
 src/libscalpel_test
+autom4te.cache/
+.deps/
+jni/.deps/
+src/.deps/
 
 # Images
 pendrive.img

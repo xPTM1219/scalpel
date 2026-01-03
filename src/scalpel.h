@@ -303,7 +303,7 @@ extern int scalpel_carveSingleInput(ScalpelInputReader * const reader,
 		const unsigned char previewMode,
 		const unsigned char carveWithMissingFooters,
 		const unsigned char noSearchOverlap
-		) throw (std::runtime_error);
+		);
 
 typedef struct scalpelState {
     ScalpelInputReader * inReader;
